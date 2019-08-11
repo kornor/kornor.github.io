@@ -1,7 +1,7 @@
 
-var perscriptionSelection = document.createElement("select");
+var prescriptionSelection = document.createElement("select");
 
-var oralPerscriptionSelection = document.createElement("select");
+var oralPrescriptionSelection = document.createElement("select");
 var oralDosageText = document.createElement("input");
 
 var oralTableDiv = document.querySelector("#oralTable");
@@ -16,13 +16,13 @@ var dosageText = document.createElement("input");
 for (let i = 0; i < oralNames.length; ++i)
 {
 	let oral = oralNames[i];
-  oralPerscriptionSelection.options.add(new Option(oral));
+  oralPrescriptionSelection.options.add(new Option(oral));
 }
 
 for(let i = 0; i < depotNames.length; i++)
 {
 	let depot = depotNames[i];
-  perscriptionSelection.options.add(new Option(depot));
+  prescriptionSelection.options.add(new Option(depot));
 }
 
 for (let i = 0; i<timings.length; ++i)
@@ -39,11 +39,11 @@ var addOralBtn = document.createElement("button");
 addOralBtn.appendChild(document.createTextNode("Add Oral"));
 addEvent(addOralBtn,'click',addOral);
 
-document.getElementById("oral_name").appendChild(oralPerscriptionSelection);
+document.getElementById("oral_name").appendChild(oralPrescriptionSelection);
 document.getElementById("oral_dosage").appendChild(oralDosageText);
 document.getElementById("oral_add").appendChild(addOralBtn);
 
-document.getElementById("depot_name").appendChild(perscriptionSelection);
+document.getElementById("depot_name").appendChild(prescriptionSelection);
 document.getElementById("depot_timing").appendChild(timingsSelection);
 document.getElementById("depot_dosage").appendChild(dosageText);
 document.getElementById("depot_add").appendChild(addDepotBtn);
@@ -136,13 +136,13 @@ function addOral()
     return;
 	}
 
-  let index = oralPerscriptionSelection.selectedIndex;
+  let index = oralPrescriptionSelection.selectedIndex;
   let maxDosage = maxOralDosages[index];
 
   let bnf = dosage / maxDosage;
 
  	let oralEntry = {
-	  "Perscription Name": oralNames[index] + " [oral]",
+	  "Prescription Name": oralNames[index] + " [oral]",
     "Dosage (mg)": dosage,
     Timing: "1 Day",
     BNF: roundToTwo(bnf)
@@ -163,7 +163,7 @@ function addDepot()
     return;
 	}
 
-  let index = perscriptionSelection.selectedIndex;
+  let index = prescriptionSelection.selectedIndex;
   let maxDosage = maxDepotDosages[index];
 
   let maxTiming = depotMaxTimings[index] * 7;
@@ -175,7 +175,7 @@ function addDepot()
   let bnf = (dosage / (days/maxTiming)) / maxDosage;
 
  	let depotEntry = {
-		"Perscription Name": depotNames[index] + " [depot]",
+		"Prescription Name": depotNames[index] + " [depot]",
     "Dosage (mg)": dosage,
     Timing: timings[weeksIndex],
     BNF: roundToTwo(bnf)

@@ -21,4 +21,4 @@ select, button, input, p {
   font-size: 25px;
 }
 
-button {border-radius: 8px;}
+button {border-radius: 8px; background-color: #555555;} /*rounded button, black */

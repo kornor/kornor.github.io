@@ -16,6 +16,6 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-select, button,input {
+select, button, input, p {
    font-size: 25px;
 }

@@ -107,13 +107,13 @@ function updateBnfTotals()
 	let bnfTotalDepot = 0;
   for (let i =0; i<depots.length; ++i)
   {
-  	bnfTotalDepot += depots[i].bnf;
+  	bnfTotalDepot += depots[i].BNF;
 	}
 
   let bnfTotalOral = 0;
   for (let i = 0; i<orals.length; ++i)
   {
-  	bnfTotalOral += orals[i].bnf;
+  	bnfTotalOral += orals[i].BNF;
 	}
 
   let total = bnfTotalDepot + bnfTotalOral;

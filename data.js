@@ -66,12 +66,13 @@ let depotNames = [
   "Flupentixol",
   "Fluphenazine",
   "Haloperidol",
-  "Paliperidone",
-  "Paliperidone 3M",
+  "Olanzapine",
+  "Paliperidone (Trinza)",
+  "Paliperidone (Sustenna)",
   "Pipotiazine",
   "Risperidone",
   "Zuclopenthixol",
-  "Olanzapine"
+  
 ];
 
 let maxDepotDosages = [
@@ -79,12 +80,13 @@ let maxDepotDosages = [
   400,
   100,
   300,
+  300,
   150,
   525,
   200,
   50,
   600,
-  300
+  
 ];
 
 let depotMaxTimings = [
@@ -92,12 +94,12 @@ let depotMaxTimings = [
   1,
   2,
   4,
+  2,
   4,
   12,
   4,
   2,
   1,
-  2
 ];
 
 let depotTimingDivisor = [

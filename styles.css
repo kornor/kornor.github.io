@@ -14,3 +14,7 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+select {
+   font-size: 50px;
+}

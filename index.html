@@ -1,0 +1,56 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<script src="data.js"></script>
+</head>
+<body>
+
+	<div id="container">
+	  <table>
+	    <tr>
+	      <th>Perscription</th>
+	      <th>Timing</th>
+	      <th>Dosage (mg)</th>
+	      <th></th>
+	    </tr>
+	    <tr>
+	      <td id="depot_name" width="50%"></td>
+	      <td id="depot_timing" width="25%"></td>
+	      <td id="depot_dosage" width="5%"></td>
+	      <td id="depot_add" width="25%"></td>
+	    </tr>
+	    <tr>
+	      <td id="oral_name"></td>
+	      <td></td>
+	      <td id="oral_dosage"></td>
+	      <td id="oral_add"></td>
+	    </tr>
+	  </table>
+	</div>
+	<br>
+	<div id="totalsContainer">
+	  <table>
+	    <tr>
+	      <td>Total BNF Depot</td>
+	      <td id="total_depot_bnf">0</td>
+	    </tr>
+	    <tr>
+	      <td>Total BNF Orals</td>
+	      <td id="total_oral_bnf">0</td>
+	    </tr>
+	    <tr>
+	      <th>Total</th>
+	      <th id="total_bnf">0</th>
+	    </tr>
+	  </table>
+	</div>
+	<br>
+	<div id="depotTable"></div>
+	<br>
+	<div id="oralTable"></div>
+
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

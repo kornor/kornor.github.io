@@ -120,7 +120,16 @@ function updateBnfTotals()
 
   document.getElementById("total_depot_bnf").innerHTML = roundToTwo(bnfTotalDepot);
   document.getElementById("total_oral_bnf").innerHTML = roundToTwo(bnfTotalOral);
-  document.getElementById("total_bnf").innerHTML = roundToTwo(total);
+  let totals = document.getElementById("total_bnf");
+  let roundedTotal = roundToTwo(total);
+  totals.innerHTML = roundedTotal;
+        
+  if (roundedTotal < 1)
+        totals.className = "bnf_good";
+  else if (roundedTotal < 1.5)
+        totals.className = "bnf_bad";
+  else
+        totals.className = "bnf_very_bad";
 
   clearTable(oralTable);
   generateTableHead(oralTable, Object.keys(allPrescriptions[0]));

@@ -124,7 +124,7 @@ function updateBnfTotals()
   let roundedTotal = roundToTwo(total);
   totals.innerHTML = roundedTotal;
         
-  if (roundedTotal < 1)
+  if (roundedTotal <= 1)
         totals.className = "bnf_good";
   else if (roundedTotal < 1.5)
         totals.className = "bnf_bad";

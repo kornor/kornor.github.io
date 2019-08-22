@@ -110,4 +110,4 @@ let depotTimingDivisor = [
   12
 ];
 
-let timings = ["1 Week", "2 Weeks", "4 Weeks", "12 Weeks"];
+let timings = ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks", "12 Weeks"];

@@ -27,3 +27,14 @@ button {
   color: white;
 } /*rounded button, black */
 
+.bnf_good {
+  color: black;
+}
+
+.bnf_bad {
+  color: orange;
+}
+
+.bnf_very_bad {
+  color: red
+}

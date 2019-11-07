@@ -44,6 +44,10 @@ td, th {
   border-collapse: collapse;
 }
 
+.results_table tr:last-child {
+  font-weight: bold;
+}
+
 tr:nth-child(even) {
   background-color: #dddddd;
 }

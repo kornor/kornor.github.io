@@ -78,6 +78,14 @@ function generateTableHead(table, data)
     th.appendChild(text);
     row.appendChild(th);
   }
+
+	// add delete button for Prescription element
+	let cell = row.insertCell ();
+	var deleteBtn = document.createElement("button");
+	deleteBtn.appendChild(document.createTextNode("Clear"));
+	addEvent(deleteBtn,'click', onClearPrescriptions);
+
+	cell.appendChild(deleteBtn);
 }
 
 function clearTable(table)
@@ -88,11 +96,11 @@ function clearTable(table)
   }
 }
 
-function deleteElement(data, Prescription)
+function deleteElement(data, prescription)
 {
 	for (let i=0; i<data.length; ++i)
 	{
-		if (data[i] == Prescription)
+		if (data[i] == prescription)
 		{
 			data.splice(i,1);
 			break;
@@ -100,11 +108,20 @@ function deleteElement(data, Prescription)
 	}
 }
 
-function onDeletePrescription(Prescription)
+function onClearPrescriptions()
 {
-	deleteElement (orals, Prescription);
-	deleteElement (depots, Prescription);
-	deleteElement (allPrescriptions, Prescription);
+		depots = [];
+		orals = [];
+		allPrescriptions = [];
+
+		updateBnfTotals();
+}
+
+function onDeletePrescription(prescription)
+{
+	deleteElement (orals, prescription);
+	deleteElement (depots, prescription);
+	deleteElement (allPrescriptions, prescription);
 
 	updateBnfTotals();
 }

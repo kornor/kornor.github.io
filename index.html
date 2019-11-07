@@ -4,7 +4,11 @@
 	<script src="data.js"></script>
 </head>
 <body>
-	<h1> Antipsychotic Total Daily Dosing Calculator </h1>
+	<div class="header">
+  <h1>Antipsychotic Total Daily Dosing Calculator</h1>
+	</div>
+	<br>
+	<br>
 	<div id="container">
 	  <table>
 	    <tr>
@@ -14,9 +18,9 @@
 	      <th></th>
 	    </tr>
 	    <tr>
-	      <td id="depot_name" width="25%"></td>
+	      <td id="depot_name" width="50%"></td>
 	      <td id="depot_timing" width="25%"></td>
-	      <td id="depot_dosage" width="25%"></td>
+	      <td id="depot_dosage" width="5%"></td>
 	      <td id="depot_add" width="25%"></td>
 	    </tr>
 	    <tr>
@@ -28,12 +32,15 @@
 	  </table>
 	</div>
 	<br>
-	<p>
-	British National Formulary (BNF) factor of 1.0 is equal to 100% of recommended maximum daily dose
-	</p>
+	<div id="depotTable"></div>
+	<br>
+	<div id="oralTable"></div>
+	<br>
 	<br>
 	<div id="totalsContainer">
-	  <table>
+	  <table class = "results_table">
+			<th class = "results" colspan="2"> Results
+			</th>
 	    <tr>
 	      <td width="75%">BNF factor: Depot</td>
 	      <td id="total_depot_bnf" width="25%">0</td>
@@ -48,11 +55,10 @@
 	    </tr>
 	  </table>
 	</div>
+	<p>
+	British National Formulary (BNF) factor of 1.0 is equal to 100% of recommended maximum daily dose
+	</p>
 	<br>
-	<div id="depotTable"></div>
-	<br>
-	<div id="oralTable"></div>
-
 
 <script src="scripts.js"></script>
 

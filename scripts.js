@@ -70,7 +70,16 @@ function addEvent(element, evnt, funct)
 function generateTableHead(table, data)
 {
   let thead = table.createTHead();
-  let row = thead.insertRow();
+
+	let rowHeader = thead.insertRow();
+	let h = document.createElement("th");
+  h.className = "summary_header";
+	h.colSpan = 5;
+	let text = document.createTextNode("Prescription Summary");
+	h.appendChild(text);
+	rowHeader.appendChild(h);
+
+	let row = thead.insertRow();
   for (let key of data)
   {
     let th = document.createElement("th");
@@ -136,6 +145,8 @@ function generateTable(table, data)
     for (key in element)
     {
       let cell = row.insertCell();
+
+			cell.className = "summary_td"
 
       let text = document.createTextNode(element[key]);
       cell.appendChild(text);
@@ -242,8 +253,8 @@ function addDepot()
 
  	let depotEntry = {
 		"Prescription Name": depotNames[index] + " [depot]",
+		Timing: timings[weeksIndex],
     "Dosage (mg)": dosage,
-    Timing: timings[weeksIndex],
     BNF: roundToTwo(bnf)
 	};
 

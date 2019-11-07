@@ -31,6 +31,16 @@ td, th {
   text-align: left;
 }
 
+.summary_header {
+  background-color: #697FCA;
+  color: white;
+  text-align: left;
+}
+
+.summary_td {
+  width: 20%;
+}
+
 .results {
   background-color: #2B4DBC;
   color: white;

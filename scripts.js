@@ -16,13 +16,13 @@ var dosageText = document.createElement("input");
 for (let i = 0; i < oralNames.length; ++i)
 {
 	let oral = oralNames[i];
-  oralPrescriptionSelection.options.add(new Option(oral));
+    oralPrescriptionSelection.options.add(new Option(oral));
 }
 
 for(let i = 0; i < depotNames.length; i++)
 {
 	let depot = depotNames[i];
-  prescriptionSelection.options.add(new Option(depot));
+    prescriptionSelection.options.add(new Option(depot));
 }
 
 for (let i = 0; i<timings.length; ++i)
@@ -88,20 +88,56 @@ function clearTable(table)
   }
 }
 
+function deleteElement(data, Prescription)
+{
+	for (let i=0; i<data.length; ++i)
+	{
+		if (data[i] == Prescription)
+		{
+			data.splice(i,1);
+			break;
+		}
+	}
+}
+
+function onDeletePrescription(Prescription)
+{
+	deleteElement (orals, Prescription);
+	deleteElement (depots, Prescription);
+	deleteElement (allPrescriptions, Prescription);
+
+	updateBnfTotals();
+}
+
+// generates table for added Prescriptions
 function generateTable(table, data)
 {
   for (let element of data)
   {
+		// add textual elements for each Prescription - name, dosage etc
     let row = table.insertRow();
     for (key in element)
     {
       let cell = row.insertCell();
+
       let text = document.createTextNode(element[key]);
       cell.appendChild(text);
     }
+
+		// add delete button for Prescription element
+    let cell = row.insertCell ();
+    var deleteBtn = document.createElement("button");
+    deleteBtn.appendChild(document.createTextNode("x"));
+		addEvent(deleteBtn,'click',
+			function(e){
+				onDeletePrescription(element);
+			});
+
+    cell.appendChild(deleteBtn);
   }
 }
 
+// regenerate table / total based on depot/oral prescription
 function updateBnfTotals()
 {
 	let bnfTotalDepot = 0;
@@ -114,7 +150,7 @@ function updateBnfTotals()
   for (let i = 0; i<orals.length; ++i)
   {
   	bnfTotalOral += orals[i].BNF;
-	}
+  }
 
   let total = bnfTotalDepot + bnfTotalOral;
 
@@ -123,17 +159,21 @@ function updateBnfTotals()
   let totals = document.getElementById("total_bnf");
   let roundedTotal = roundToTwo(total);
   totals.innerHTML = roundedTotal;
-        
+
   if (roundedTotal <= 1)
-        totals.className = "bnf_good";
+  	totals.className = "bnf_good";
   else if (roundedTotal < 1.5)
-        totals.className = "bnf_bad";
+    totals.className = "bnf_bad";
   else
-        totals.className = "bnf_very_bad";
+    totals.className = "bnf_very_bad";
 
   clearTable(oralTable);
-  generateTableHead(oralTable, Object.keys(allPrescriptions[0]));
-  generateTable(oralTable, allPrescriptions);
+
+	if (allPrescriptions.length > 0)
+	{
+		generateTableHead(oralTable, Object.keys(allPrescriptions[0]));
+	  generateTable(oralTable, allPrescriptions);
+	}
 }
 
 function addOral()
@@ -154,7 +194,7 @@ function addOral()
 	  "Prescription Name": oralNames[index] + " [oral]",
     "Dosage (mg)": dosage,
     Timing: "1 Day",
-    BNF: roundToTwo(bnf)
+    BNF: roundToTwo(bnf),
 	};
 
   orals.push(oralEntry);

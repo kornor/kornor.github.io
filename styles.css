@@ -1,5 +1,11 @@
 
-h1 {
+
+/* Header/Logo Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
   font-family: arial, sans-serif;
   font-size: 30px;
 }
@@ -9,6 +15,7 @@ table {
   font-family: arial, sans-serif;
   font-size: 25px;
   border-collapse: collapse;
+  border: 3px solid black;
   width: 100%;
 }
 
@@ -16,6 +23,16 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+
+.results {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.results_table {
+  border: 5px solid #1abc9c;
+  border-collapse: collapse;
 }
 
 tr:nth-child(even) {
@@ -28,8 +45,8 @@ select, button, input, p {
 }
 
 button {
-  border-radius: 8px; 
-  background-color: #555555; 
+  border-radius: 8px;
+  background-color: #555555;
   color: white;
 } /*rounded button, black */
 
@@ -44,3 +61,4 @@ button {
 .bnf_very_bad {
   color: red
 }
+

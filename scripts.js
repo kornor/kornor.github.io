@@ -1,4 +1,5 @@
 
+
 var prescriptionSelection = document.createElement("select");
 
 var oralPrescriptionSelection = document.createElement("select");
@@ -190,7 +191,7 @@ function updateBnfTotals()
 
   if (roundedTotal <= 1)
   	totals.className = "bnf_good";
-  else if (roundedTotal < 1.5)
+  else if (roundedTotal < 1.999)
     totals.className = "bnf_bad";
   else
     totals.className = "bnf_very_bad";
@@ -263,3 +264,4 @@ function addDepot()
 
   updateBnfTotals();
 }
+

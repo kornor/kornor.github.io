@@ -4,7 +4,7 @@
 .header {
   padding: 30px;
   text-align: center;
-  background: #1abc9c;
+  background: #697FCA;
   color: white;
   font-family: arial, sans-serif;
   font-size: 30px;
@@ -15,7 +15,7 @@ table {
   font-family: arial, sans-serif;
   font-size: 25px;
   border-collapse: collapse;
-  border: 3px solid black;
+  border: 5px solid #697FCA;
   width: 100%;
 }
 
@@ -25,13 +25,22 @@ td, th {
   padding: 8px;
 }
 
-.results {
-  background-color: #1abc9c;
+.entry_header {
+  background-color: #697FCA;
   color: white;
+  text-align: left;
+}
+
+.results {
+  background-color: #2B4DBC;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  padding: 15px;
 }
 
 .results_table {
-  border: 5px solid #1abc9c;
+  border: 5px solid #2B4DBC;
   border-collapse: collapse;
 }
 

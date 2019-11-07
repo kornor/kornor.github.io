@@ -2,12 +2,12 @@
 
 /* Header/Logo Title */
 .header {
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   background: #697FCA;
   color: white;
   font-family: arial, sans-serif;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
@@ -45,7 +45,6 @@ td, th {
   background-color: #2B4DBC;
   color: white;
   text-align: left;
-  font-size: 30px;
   padding: 15px;
 }
 

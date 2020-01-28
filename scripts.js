@@ -235,8 +235,8 @@ function addOral()
 	let oralEntry =
 	{
 		"Prescription Name": oralNames[index] + " [oral]",
-		"Dosage (mg)": dosage,
 		"Interval": "1 Day",
+		"Dosage (mg)": dosage,
 		BNF: roundToTwo(bnf),
 	};
 

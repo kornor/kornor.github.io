@@ -211,17 +211,21 @@ function updateBnfTotals()
 	}
 }
 
-Number.isInteger = Number.isInteger || function (value)
+function toNumber(str) 
 {
-	return typeof value === "number" &&
-	isFinite(value) &&
-	Math.floor(value) === value;
-};
+	str = String(str).trim();
+  	return !str ? NaN : Number(str);
+}
+
+functoin isNumber(str)
+{
+	return !isNan(toNumber(str));
+}
 
 function addOral()
 {
 	let dosage = parseFloat(oralDosageText.value);
-	if (Number.isInteger(dosage) == false || dosage <= 0)
+	if (isNumber(dosage) == false || dosage <= 0)
 	{
 		alert("Invalid dosage");
 		return;
@@ -249,7 +253,7 @@ function addOral()
 function addDepot()
 {
 	let dosage = parseFloat(dosageText.value);
-	if (Number.isInteger(dosage) == false || dosage <= 0)
+	if (isNumber(dosage) == false || dosage <= 0)
 	{
 		alert("Invalid dosage");
 		return;

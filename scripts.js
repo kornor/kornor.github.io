@@ -214,12 +214,12 @@ function updateBnfTotals()
 function toNumber(str) 
 {
 	str = String(str).trim();
-  	return !str ? NaN : Number(str);
+	return !str ? NaN : Number(str);
 }
 
-functoin isNumber(str)
+function isNumber(str)
 {
-	return !isNan(toNumber(str));
+	return !Number.isNaN(toNumber(str));
 }
 
 function addOral()

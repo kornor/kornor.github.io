@@ -228,7 +228,7 @@ function toNumber(str)
 
 function isNumber(str)
 {
-	return !Number.isNaN(toNumber(str));
+	return !isNaN(toNumber(str));
 }
 
 function addOral()

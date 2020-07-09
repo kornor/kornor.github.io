@@ -72,7 +72,7 @@ let depotNames = [
   "Pipotiazine",
   "Risperidone",
   "Zuclopenthixol",
-  
+
 ];
 
 let maxDepotDosages = [
@@ -86,7 +86,7 @@ let maxDepotDosages = [
   200,
   50,
   600,
-  
+
 ];
 
 let depotMaxTimings = [
@@ -110,4 +110,13 @@ let depotTimingDivisor = [
   12
 ];
 
+let oralTimingsMultiplier = [
+  1,
+  2,
+  3,
+  4,
+];
+
 let timings = ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks", "12 Weeks"];
+
+let oralTimings = ["Once daily", "Twice daily", "Three times daily", "Four times daily"];

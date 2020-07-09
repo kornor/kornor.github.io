@@ -11,6 +11,7 @@ var depotTableDiv = document.querySelector("#depotTable");
 var oralTable = document.createElement("table");
 var depotTable = document.createElement("table");
 
+var oralTimingSelection = document.createElement("select");
 var timingsSelection = document.createElement("select");
 var dosageText = document.createElement("input");
 
@@ -32,6 +33,13 @@ for (let i = 0; i < timings.length; ++i)
 	timingsSelection.options.add(new Option(timing));
 }
 
+// oral dosing timings
+for (let i = 0; i < oralTimings.length; ++i)
+{
+	let timing = oralTimings[i];
+	oralTimingSelection.options.add(new Option(timing));
+}
+
 var addDepotBtn = document.createElement("button");
 addDepotBtn.appendChild(document.createTextNode("Add Depot"));
 addEvent(addDepotBtn, 'click', addDepot);
@@ -42,6 +50,7 @@ addEvent(addOralBtn, 'click', addOral);
 
 document.getElementById("oral_name").appendChild(oralPrescriptionSelection);
 document.getElementById("oral_dosage").appendChild(oralDosageText);
+document.getElementById("oral_timing").appendChild(oralTimingSelection);
 document.getElementById("oral_add").appendChild(addOralBtn);
 
 document.getElementById("depot_name").appendChild(prescriptionSelection);
@@ -211,7 +220,7 @@ function updateBnfTotals()
 	}
 }
 
-function toNumber(str) 
+function toNumber(str)
 {
 	str = String(str).trim();
 	return !str ? NaN : Number(str);
@@ -233,14 +242,17 @@ function addOral()
 
 	let index = oralPrescriptionSelection.selectedIndex;
 	let maxDosage = maxOralDosages[index];
+	let timingIndex = oralTimingSelection.selectedIndex;
+	let dailyMultiplier = oralTimingsMultiplier[timingIndex];
 
-	let bnf = dosage / maxDosage;
+	let bnf = (dosage * dailyMultiplier) / maxDosage;
 
+	let dosageStr = "" + dailyMultiplier + " x " + dosage + "mg";
 	let oralEntry =
 	{
 		"Prescription Name": oralNames[index] + " [oral]",
-		"Interval": "1 Day",
-		"Dosage (mg)": dosage,
+		"Interval": oralTimings[timingIndex],
+		"Dosage (mg)": dosageStr,
 		BNF: roundToTwo(bnf),
 	};
 
@@ -249,6 +261,7 @@ function addOral()
 
 	updateBnfTotals();
 }
+
 
 function addDepot()
 {

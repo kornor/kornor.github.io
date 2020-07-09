@@ -220,7 +220,7 @@ Number.isInteger = Number.isInteger || function (value)
 
 function addOral()
 {
-	let dosage = parseInt(oralDosageText.value);
+	let dosage = parseFloat(oralDosageText.value);
 	if (Number.isInteger(dosage) == false || dosage <= 0)
 	{
 		alert("Invalid dosage");
@@ -248,7 +248,7 @@ function addOral()
 
 function addDepot()
 {
-	let dosage = parseInt(dosageText.value);
+	let dosage = parseFloat(dosageText.value);
 	if (Number.isInteger(dosage) == false || dosage <= 0)
 	{
 		alert("Invalid dosage");

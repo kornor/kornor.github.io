@@ -1,0 +1,89 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<script src="data.js"></script>
+</head>
+<body>
+	<div class="header">
+  <h1>SWAPP - State-wide Audit of Psychotropic Prescribing
+		<br>
+		 Antipsychotic Total Daily Dosing Calculator</h1>
+	</div>
+	<br>
+	<br>
+	<div id="container">
+	  <table>
+			<tr>
+				<th class = "entry_header" colspan="4">Prescription Input</th>
+			</tr>
+	    <tr>
+	      <th>Prescription</th>
+	      <th>Interval</th>
+	      <th>Dosage (mg)</th>
+	      <th></th>
+	    </tr>
+	    <tr>
+	      <td id="depot_name" width="25%"></td>
+	      <td id="depot_timing" width="25%"></td>
+	      <td id="depot_dosage" width="25%"></td>
+	      <td id="depot_add" width="25%"></td>
+	    </tr>
+	    <tr>
+	      <td id="oral_name"></td>
+	      <td id="oral_timing"></td>
+	      <td id="oral_dosage"></td>
+	      <td id="oral_add"></td>
+	    </tr>
+	  </table>
+	</div>
+	<br>
+	<div id="depotTable"></div>
+	<br>
+	<div id="oralTable"></div>
+	<br>
+	<br>
+	<div id="totalsContainer">
+	  <table class = "results_table">
+		<tr>
+			<th class = "results" colspan="2"> Results
+			</th>
+		</tr>
+	    <tr>
+	      <td width="75%">BNF factor: Depot</td>
+	      <td id="total_depot_bnf" width="25%">0</td>
+	    </tr>
+	    <tr>
+	      <td width="75%">BNF factor: Orals</td>
+	      <td id="total_oral_bnf" width="25%">0</td>
+	    </tr>
+	    <tr>
+	      <td width="75%">BNF factor: Total</td>
+	      <td id="total_bnf" width="25%">0</td>
+	    </tr>
+	  </table>
+	</div>
+	<p>
+	British National Formulary (BNF) factor of 1.0 is equal to 100% of recommended maximum daily dose.
+	<br>
+	Information on recommended maximum daily dosing is drawn from Maudsley's Prescribing Guidelines, 13th Ed.
+	</p>
+	<br>
+	<p>
+  <span style="font-size:0.7em">
+		Disclaimer, privacy information and recognition of development:
+		<br>
+		This tool is free to use, carries no warranty, and may change or be removed at any time, at the discretion of the development team.
+		By using this tool, users assume all responsibility for any potential harm which may result.
+		<br>
+		No patient identifying data is required to use this tool; no data inputted into the tool is stored or recorded.
+		<br>
+		Licencing information is available at <a href="https://github.com/kornor/kornor.github.io">https://github.com/kornor/kornor.github.io</a>
+	  	<br>
+	  	Citation: Northwood K, Theodoros T, Wang N, et al. High-dose antipsychotic therapy and reflective prescribing: development of an online tool for rapid, easy calculation of antipsychotic total daily dose.
+	  	Australasian Psychiatry 2020: 1039856220917080. <a href = "https://doi.org/10.1177/1039856220917080"> https://doi.org/10.1177/1039856220917080</a>
+
+	</span>
+	</p>
+<script src="scripts.js"></script>
+</body>
+</html>

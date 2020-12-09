@@ -4,7 +4,7 @@ let oralNames = [
  "Amisulpride",
 "Aripiprazole",
 "Asenapine",
-"Brexipiprazole",
+"Brexpiprazole",
 "Cariprazine",
 "Chlorpromazine",
 "Clozapine",

@@ -66,7 +66,7 @@ let maxDepotDosages = [
   150,
   525,
   50,
-  200,
+  400,
 
 ];
 
@@ -80,7 +80,7 @@ let depotMaxTimings = [
   12,
   4,
   2,
-  1,
+  2,
 ];
 
 let depotTimingDivisor = [

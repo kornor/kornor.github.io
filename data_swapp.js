@@ -78,7 +78,6 @@ let depotMaxTimings = [
   2,
   4,
   12,
-  4,
   2,
   2,
 ];

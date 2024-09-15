@@ -69,6 +69,7 @@ let depotNames = [
   "Olanzapine",
   "Paliperidone (Sustenna)",
   "Paliperidone (Trinza)",
+  "Paliperidone (Hafyera)",
   "Pipotiazine",
   "Risperidone",
   "Zuclopenthixol",
@@ -83,6 +84,7 @@ let maxDepotDosages = [
   300,
   150,
   525,
+  1000,
   200,
   50,
   600,
@@ -97,6 +99,7 @@ let depotMaxTimings = [
   2,
   4,
   12,
+  26, 
   4,
   2,
   1,
@@ -107,7 +110,8 @@ let depotTimingDivisor = [
   2,
   3,
   4,
-  12
+  12, 
+  26
 ];
 
 let oralTimingsMultiplier = [
@@ -117,6 +121,6 @@ let oralTimingsMultiplier = [
   4,
 ];
 
-let timings = ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks", "12 Weeks"];
+let timings = ["1 Week", "2 Weeks", "3 Weeks", "4 Weeks", "12 Weeks", "26 Weeks (6 mthly)"];
 
 let oralTimings = ["Once daily", "Twice daily", "Three times daily", "Four times daily"];
